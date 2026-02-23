@@ -1,0 +1,74 @@
+{
+  "packages": [
+    {
+      "id": "a9bf81f8-3fb5-4422-a754-5c306091935c",
+      "userId": "31a1b1bb-fad6-4bde-bcee-7c443647f009",
+      "userName": "yelpAd",
+      "pickupLocation": "chennai",
+      "destination": "indore",
+      "estimatedDeliveryTime": "2024-09-12T22:13",
+      "estimatedPrice": "123",
+      "deliverTo": "rakesh",
+      "createdOn": "2024-09-08T16:43:37.080Z",
+      "picklat": 13.0836939,
+      "picklng": 80.270186,
+      "destlat": 22.7203616,
+      "destlng": 75.8681996,
+      "status": "pending"
+    },
+    {
+      "id": "d5883d45-2de0-4285-9e8c-0a0810063306",
+      "userId": "7d860521-06dd-419a-9d40-7e440819d299",
+      "userName": "admin@example.com",
+      "pickupLocation": "railway station bhubaneswar",
+      "destination": "prashanti vihar patia bhubaneswar",
+      "estimatedDeliveryTime": "2026-02-26T11:17",
+      "estimatedPrice": "99.98",
+      "deliverTo": "yash",
+      "createdOn": "2026-02-23T05:48:38.422Z",
+      "picklat": 20.2661224,
+      "picklng": 85.8439279,
+      "destlat": 20.27241,
+      "destlng": 85.83385,
+      "status": "accepted",
+      "acceptedBy": "3734a41e-53ff-496a-8ca6-c261879db88d"
+    }
+  ],
+  "users": [
+    {
+      "id": "31a1b1bb-fad6-4bde-bcee-7c443647f009",
+      "username": "yelpAd",
+      "password": "$2b$10$5L1Dqagkk8Cjc9KwAqfXGupCIFj5X6stJq.GLAO7pfX5kaBCW7Kua",
+      "friends": [],
+      "role": "sender"
+    },
+    {
+      "id": "f5a44113-df9e-48d0-9d29-c5018624f86a",
+      "username": "bharatpatidar002@gmail.com",
+      "password": "$2b$10$x..QuIIW/C0oI/2AuUzSeOEEUkT3vmx.6Lr89ROXZvTuW4umA15VW",
+      "friends": [],
+      "role": "sender"
+    },
+    {
+      "id": "7d860521-06dd-419a-9d40-7e440819d299",
+      "username": "admin@example.com",
+      "password": "$2b$10$4ifGVlv.lKi4bLPECYOl..CBRBrmgF0WM1utrvN38I5xswc/g/Fde",
+      "friends": [],
+      "role": "sender"
+    },
+    {
+      "id": "f470b3ab-2072-400d-ad7a-dec7c7696c0a",
+      "username": "b420014@iiit-bh.ac.in",
+      "password": "$2b$10$lEnitX6hka9NY.jiji/o0uUFr9S3TViHWVRw3yI0ZyTWaEnwFHsZ.",
+      "friends": [],
+      "role": "courier"
+    },
+    {
+      "id": "3734a41e-53ff-496a-8ca6-c261879db88d",
+      "username": "driver",
+      "password": "$2b$10$ir9eL4NQnwxfbCkw1C.PLOLJlLMJVaDcliqDyZxtPnV1TfNrFIo1y",
+      "friends": [],
+      "role": "courier"
+    }
+  ]
+}
