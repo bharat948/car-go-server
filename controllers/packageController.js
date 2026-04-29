@@ -3,6 +3,7 @@ const {
     getPackageById: getOnePackageById,
     savePackage,
     updatePackage,
+    acceptPendingPackageAtomically,
     deletePackage: deleteOnePackage,
 } = require('../lib/db');
 const { v4: uuidv4 } = require('uuid');
@@ -199,11 +200,22 @@ const updatePackageStatus = (req, res) => {
                 message: `Courier can only transition ${currentStatus} → ${(allowed[currentStatus] || []).join(' or ')}`,
             });
         }
-        const updates = { status: newStatus };
         if (newStatus === 'accepted') {
-            updates.acceptedBy = userId;
+            const accepted = acceptPendingPackageAtomically(id, userId);
+            if (!accepted) {
+                const freshPkg = getOnePackageById(id);
+                if (!freshPkg) {
+                    return res.status(404).json({ message: 'Package not found' });
+                }
+                if ((freshPkg.status || 'pending') === 'accepted' && freshPkg.acceptedBy && freshPkg.acceptedBy !== userId) {
+                    return res.status(409).json({ message: 'Package already accepted by another courier' });
+                }
+                return res.status(409).json({ message: 'Package can no longer be accepted' });
+            }
+            return res.status(200).json(accepted);
         }
-        const updated = updatePackage(id, updates);
+
+        const updated = updatePackage(id, { status: newStatus });
         return res.status(200).json(updated);
     }
 
